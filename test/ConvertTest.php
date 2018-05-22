@@ -13,14 +13,13 @@
          * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
-        public function testLowerCase() {
+        public function 小文字の変換() {
             try {
                 $str = "zepd";
                 $expected = "ぜっといーぴーでぃー";
                 $actual = FuriganaTsukeruyatsu\Convert::convert($str);
                 $this->assertEquals($expected, $actual);
             } catch (\Exception $e) {
-                $this->assertInstanceOf("InvalidArgumentException", $e);
                 $this->fail($e->getMessage());
             }
             $this->assertTrue(true);
@@ -32,14 +31,13 @@
          * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
-        public function testUpperCase() {
+        public function 大文字の変換() {
             try {
                 $str = "UGQS";
-                $expected = "ゆーじーきゅーえす";
+                $expected = "ユージーキューエス";
                 $actual = FuriganaTsukeruyatsu\Convert::convert($str);
                 $this->assertEquals($expected, $actual);
             } catch (\Exception $e) {
-                $this->assertInstanceOf("InvalidArgumentException", $e);
                 $this->fail($e->getMessage());
             }
             $this->assertTrue(true);
@@ -51,14 +49,13 @@
          * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
-        public function testNumberCase() {
+        public function 数字の変換() {
             try {
                 $str = "0123";
                 $expected = "ぜろいちにさん";
                 $actual = FuriganaTsukeruyatsu\Convert::convert($str);
                 $this->assertEquals($expected, $actual);
             } catch (\Exception $e) {
-                $this->assertInstanceOf("InvalidArgumentException", $e);
                 $this->fail($e->getMessage());
             }
             $this->assertTrue(true);
@@ -70,14 +67,13 @@
          * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
-        public function testMixedConvert() {
+        public function 混在の変換() {
             try {
                 $str = "abedcAB012";
                 $expected = "えーびーいーでぃーしーエービーぜろいちに";
                 $actual = FuriganaTsukeruyatsu\Convert::convert($str);
                 $this->assertEquals($expected, $actual);
             } catch (\Exception $e) {
-                $this->assertInstanceOf("InvalidArgumentException", $e);
                 $this->fail($e->getMessage());
             }
             $this->assertTrue(true);
@@ -87,7 +83,7 @@
          * @test
          * @expectedException \InvalidArgumentException
          */
-        public function testExceptionCase() {
+        public function 例外が起きる場合() {
             FuriganaTsukeruyatsu\Convert::convert("あいうえお.,");
         }
 
@@ -97,14 +93,13 @@
          * @throws \PHPUnit\Framework\ExpectationFailedException
          * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          */
-        public function testNotExceptinCase() {
+        public function 例外が起きない場合() {
             try {
                 $str = "あいうえお";
                 $expected = "あいうえお";
                 $actual = FuriganaTsukeruyatsu\Convert::convert($str, true);
                 $this->assertEquals($expected, $actual);
             } catch (\Exception $e) {
-                $this->assertInstanceOf("InvalidArgumentException", $e);
                 $this->fail($e->getMessage());
             }
             $this->assertTrue(true);
