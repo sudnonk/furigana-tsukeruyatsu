@@ -1,10 +1,9 @@
-# furigana-tsukeruyatsu
+# ふりがな付けるやつ
 ![build status](https://travis-ci.org/sudnonk/furigana-tsukeruyatsu.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/sudnonk/furigana-tsukeruyatsu/badge.svg?branch=master)](https://coveralls.io/github/sudnonk/furigana-tsukeruyatsu?branch=master)
 
 英数字の文字列に平仮名のふりがな|フリガナを付けます
 
-# sample
+# Sample
 ```php
 $hoge = Convert::convert("abAB012");
 // えーびーエービーぜろいちに
@@ -15,6 +14,9 @@ $hoge2 = Convert::convert("あいうえ");
 $hoge2 = Convert::convert("abc.;あいう,012",true);
 // えーびーしー.;あいう,ぜろいちに
 ```
+
+# Install
+`conposer require sudnonk/furigana-tsukeruyatsu`
 
 # Default convert table
 defined at `src/Convert.php`.
