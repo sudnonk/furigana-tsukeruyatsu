@@ -84,8 +84,6 @@
          * @throws \InvalidArgumentException self::$tableに存在しない文字が$alphanumericにあったとき
          */
         public static function convert(string $alphanumeric, bool $throw_exception = false, string $glue = ""): string {
-            $glue_length = mb_strlen($glue);
-
             $yomigana = "";
             $str_length = strlen($alphanumeric);
             for ($i = 0; $i < $str_length; $i++) {
