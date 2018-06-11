@@ -9,8 +9,6 @@
 
         /**
          * @throws \PHPUnit\Framework\AssertionFailedError
-         * @throws \PHPUnit\Framework\ExpectationFailedException
-         * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
         public function 小文字の変換() {
@@ -22,13 +20,10 @@
             } catch (\Exception $e) {
                 $this->fail($e->getMessage());
             }
-            $this->assertTrue(true);
         }
 
         /**
          * @throws \PHPUnit\Framework\AssertionFailedError
-         * @throws \PHPUnit\Framework\ExpectationFailedException
-         * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
         public function 大文字の変換() {
@@ -40,13 +35,10 @@
             } catch (\Exception $e) {
                 $this->fail($e->getMessage());
             }
-            $this->assertTrue(true);
         }
 
         /**
          * @throws \PHPUnit\Framework\AssertionFailedError
-         * @throws \PHPUnit\Framework\ExpectationFailedException
-         * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
         public function 数字の変換() {
@@ -58,13 +50,10 @@
             } catch (\Exception $e) {
                 $this->fail($e->getMessage());
             }
-            $this->assertTrue(true);
         }
 
         /**
          * @throws \PHPUnit\Framework\AssertionFailedError
-         * @throws \PHPUnit\Framework\ExpectationFailedException
-         * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          * @test
          */
         public function 混在の変換() {
@@ -76,7 +65,6 @@
             } catch (\Exception $e) {
                 $this->fail($e->getMessage());
             }
-            $this->assertTrue(true);
         }
 
         /**
@@ -90,8 +78,6 @@
         /**
          * @test
          * @throws \PHPUnit\Framework\AssertionFailedError
-         * @throws \PHPUnit\Framework\ExpectationFailedException
-         * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
          */
         public function 例外が起きない場合() {
             try {
@@ -102,7 +88,6 @@
             } catch (\Exception $e) {
                 $this->fail($e->getMessage());
             }
-            $this->assertTrue(true);
         }
 
         /**
