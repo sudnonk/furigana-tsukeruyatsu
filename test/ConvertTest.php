@@ -104,4 +104,19 @@
             }
             $this->assertTrue(true);
         }
+
+        /**
+         * @throws \PHPUnit\Framework\AssertionFailedError
+         * @test
+         */
+        public function 結合文字を指定した場合() {
+            try {
+                $str = "abc";
+                $expected = "えー、びー、しー";
+                $actual = FuriganaTsukeruyatsu\Convert::convert($str,false,"、");
+                $this->assertEquals($expected, $actual);
+            } catch (\Exception $e) {
+                $this->fail($e->getMessage());
+            }
+        }
     }

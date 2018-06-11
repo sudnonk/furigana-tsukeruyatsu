@@ -77,12 +77,13 @@
         /**
          * 半角英数字に日本語の読み仮名をつける
          *
-         * @param string $alphanumeric 半角英数字の文字列
-         * @param bool $throw_exception 変換テーブルにない文字があったときに例外を吐くか、そのまま$yomiganaにくっつけるか
+         * @param string $alphanumeric    半角英数字の文字列
+         * @param bool   $throw_exception 変換テーブルにない文字があったときに例外を吐くか、そのまま$yomiganaにくっつけるか
+         * @param string $glue            文字同士の間に挟む文字（例：$glueが"、"のとき、"えー、びー、しー"
          * @return string $yomigana 日本語の読み仮名
          * @throws \InvalidArgumentException self::$tableに存在しない文字が$alphanumericにあったとき
          */
-        public static function convert(string $alphanumeric, bool $throw_exception = false): string {
+        public static function convert(string $alphanumeric, bool $throw_exception = false, string $glue = ""): string {
             $yomigana = "";
             $str_length = strlen($alphanumeric);
             for ($i = 0; $i < $str_length; $i++) {
@@ -93,8 +94,9 @@
                 } else {
                     throw new \InvalidArgumentException("Yomigana is not defined for " . $alphanumeric[$i]);
                 }
+                $yomigana .= $glue;
             }
 
-            return $yomigana;
+            return rtrim($yomigana, $glue);
         }
     }
