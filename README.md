@@ -13,6 +13,9 @@ $hoge2 = Convert::convert("あいうえ");
 
 $hoge2 = Convert::convert("abc.;あいう,012",true);
 // えーびーしー.;あいう,ぜろいちに
+
+$hoge3 = Convert::convert("abAB012",false,"、");
+// えー、びー、エー、ビー、ぜろ、いち、に
 ```
 
 # Install
