@@ -4,7 +4,7 @@
     namespace sudnonk\FuriganaTsukeruyatsu;
 
 
-    require_once __DIR__ . "../vendor/autoload.php";
+    require_once __DIR__ . "/../vendor/autoload.php";
 
     //ランダムな文字列を生成し、その文字列とそのフリガナをtsv形式で出力する
     for ($i = 0; $i < 47; $i++) {
