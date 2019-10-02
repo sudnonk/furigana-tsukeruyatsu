@@ -21,5 +21,6 @@
     "psr-4": {
       "sudnonk\\FuriganaTsukeruyatsu\\": "src/"
     }
-  }
+  },
+  "description": "英数字にフリガナを振るライブラリです。This library converts alphabet and numbers to Japanese ruby in Hiragana and Katakana."
 }
