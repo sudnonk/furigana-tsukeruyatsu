@@ -3,11 +3,11 @@
     namespace sudnonk\FuriganaTsukeruyatsu;
 
     /**
-     * Class Convert
+     * Class Furigana
      *
      * @package sudnonk\FuriganaTsukeruyatsu
      */
-    class Convert {
+    class Furigana {
         /** @var array $table 変換テーブル */
         private static $table = array(
             "a" => "えー",
@@ -75,31 +75,31 @@
         );
 
         /**
-         * 半角英数字に日本語の読み仮名をつける
+         * 半角英数字に日本語のフリガナをつける
          *
          * @param string $alphanumeric    半角英数字の文字列
-         * @param bool   $throw_exception 変換テーブルにない文字があったときに例外を吐くか、そのまま$yomiganaにくっつけるか
+         * @param bool   $throw_exception trueのとき変換テーブルにない文字があったら例外を吐く。falseならそのまま$furiganaにくっつける
          * @param string $glue            文字同士の間に挟む文字（例：$glueが"、"のとき、"えー、びー、しー"
-         * @return string $yomigana 日本語の読み仮名
+         * @return string $furigana フリガナ
          * @throws \InvalidArgumentException self::$tableに存在しない文字が$alphanumericにあったとき
          */
         public static function convert(string $alphanumeric, bool $throw_exception = false, string $glue = ""): string {
-            $yomigana = "";
+            $furigana = "";
             $str_length = strlen($alphanumeric);
             for ($i = 0; $i < $str_length; $i++) {
                 if (isset(self::$table[$alphanumeric[$i]])) {
-                    $yomigana .= self::$table[$alphanumeric[$i]];
+                    $furigana .= self::$table[$alphanumeric[$i]];
                 } elseif ($throw_exception) {
-                    $yomigana .= $alphanumeric[$i];
+                    $furigana .= $alphanumeric[$i];
                 } else {
                     throw new \InvalidArgumentException("Yomigana is not defined for " . $alphanumeric[$i]);
                 }
 
                 if ($i !== $str_length - 1) {
-                    $yomigana .= $glue;
+                    $furigana .= $glue;
                 }
             }
 
-            return $yomigana;
+            return $furigana;
         }
     }
