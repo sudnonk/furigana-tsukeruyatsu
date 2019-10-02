@@ -92,7 +92,7 @@
                 } elseif ($throw_exception) {
                     $furigana .= $alphanumeric[$i];
                 } else {
-                    throw new \InvalidArgumentException("Yomigana is not defined for " . $alphanumeric[$i]);
+                    throw new \InvalidArgumentException("Furigana is not defined for " . $alphanumeric[$i]);
                 }
 
                 if ($i !== $str_length - 1) {
