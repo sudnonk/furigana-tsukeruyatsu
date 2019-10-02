@@ -1,20 +1,20 @@
 # ふりがな付けるやつ
 ![build status](https://travis-ci.org/sudnonk/furigana-tsukeruyatsu.svg?branch=master)
 
-英数字の文字列に平仮名のふりがな|フリガナを付けます
+英数字の文字列に平仮名とカタカナのフリガナを付けます
 
 # Sample
 ```php
-$hoge = Convert::convert("abAB012");
+$hoge = Furigana::convert("abAB012");
 // えーびーエービーぜろいちに
 
-$hoge2 = Convert::convert("あいうえ");
+$hoge2 = Furigana::convert("あいうえ");
 // throws InvalidArgumentException.
 
-$hoge2 = Convert::convert("abc.;あいう,012",true);
+$hoge2 = Furigana::convert("abc.;あいう,012", true);
 // えーびーしー.;あいう,ぜろいちに
 
-$hoge3 = Convert::convert("abAB012",false,"、");
+$hoge3 = Furigana::convert("abAB012",false, "、");
 // えー、びー、エー、ビー、ぜろ、いち、に
 ```
 
@@ -22,9 +22,9 @@ $hoge3 = Convert::convert("abAB012",false,"、");
 `conposer require sudnonk/furigana-tsukeruyatsu`
 
 # Default convert table
-defined at `src/Convert.php`.
+defined at `src/Furigana.php`.
 
-|英数字|平仮名|
+|英数字|仮名|
 |:----:|:----:|
 |a|えー|
 |b|びー|
