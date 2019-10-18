@@ -21,6 +21,9 @@ $hoge3 = Furigana::convert("abAB012",false, "、");
 # Install
 `conposer require sudnonk/furigana-tsukeruyatsu`
 
+# Enviroment
+This library may works in `php ^7.0`. But highly recommend using `php ^7.1`, because I tests only in `php ^7.1`.
+
 # Default convert table
 defined at `src/Furigana.php`.
 
